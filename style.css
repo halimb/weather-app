@@ -1,0 +1,147 @@
+body {
+  overflow: hidden;
+  background-color: rgb(100, 120, 200);
+  image-rendering: auto;
+
+
+}
+
+.sunny {
+  background-attachment: fixed;
+  background-image: linear-gradient(325deg, rgba(23, 81, 255, 1) 0%, rgba(179, 248, 252, 1) 100%);
+}
+
+.night-sky {
+  background-attachment: fixed;
+  background-image: linear-gradient(0deg, rgba(14, 82, 156, 1) -40%, rgba(7, 4, 23, 1) 100%);
+}
+
+.overcast {
+  background-attachment: fixed;
+  background-image: linear-gradient(to bottom, #2E576E 0%, #A3B8CC 100%);
+}
+
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.panel {
+  z-index: 1;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: #2d5080;
+  text-align: center;
+  box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0.3);
+}
+
+.text {
+  font-family: 'Hind', sans-serif;
+  color: white;
+  font-size: 120%;
+}
+
+.spinner {
+  animation: spin 40s ease infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.temp {
+  margin: -20px 0px -20px 0px;
+  font-family: 'Dosis', sans-serif;
+}
+
+.toggle-btn-parent {
+  position: relative;
+  perspective: 0px;
+  cursor: pointer;
+  float: right;
+}
+
+.toggle-btn-child {
+  z-index: 1;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50%;
+  background-color: #2d5080;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.4);
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-style: bold;
+  color: white;
+}
+
+@keyframes rotation {
+  0% 100% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes phase-a {
+  0% {
+    background-color: #2d5080;
+  }
+  50% {
+    background-color: black;
+  }
+}
+
+@keyframes phase-b {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: #2d5080;
+  }
+}
+
+.rotate {
+  animation: rotation 0.5s linear;
+}
+
+.front {
+  background-color: black;
+  animation: phase-a 0.5s step-end;
+}
+
+.back {
+  background-color: #2d5080;
+  animation: phase-b 0.5s step-end;
+}
+
+.hide {
+  animation: side-a 0.5s step-end;
+}
+
+@keyframes side-a {
+  0% {
+    visibility: visible;
+  }
+  50% {
+    visibility: hidden;
+  }
+}
+
+.appear {
+  animation: side-b 0.5s step-end;
+}
+
+@keyframes side-b {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+}
