@@ -29,12 +29,13 @@ var imgFlake = "img/flake.png";
 
 
 
-$(window).resize(function() {
+/*$(window).resize(function() {
   windowHeight = $(window).height();
   windowWidth = $(window).width();
   $(".panel").css("font-size", windowWidth / 9 + "%");
   $(".panel").css("line-height", windowWidth / 70 + "px");
-});
+  console.log(windowWidth);
+});*/
 
 $("#btn-parent").click(flip);
 doTheThing();
@@ -275,8 +276,8 @@ function success(position) {
     tempF = json.current.temp_f + "° F";
     var conditionCode = json.current.condition.code;
     var conditionText = json.current.condition.text;
-    var icon = '<img src="https://' + json.current.condition.icon +
-     '" alt = "current condition icon" style="padding-top : 30px">';
+    var icon = '<img class="icon" src="https://' + json.current.condition.icon +
+     '" alt = "current condition icon">';
     var day = json.current.is_day;
     var sun = $.inArray(conditionCode, SUN_CODES) + 1;
     var lightClouds = $.inArray(conditionCode, L_CLOUDS_CODES) + 1;
@@ -294,7 +295,6 @@ function success(position) {
 function displayWeather(day, sun, lightClouds, darkClouds, snow, dry) {
   if (sun) {
     if (day) {
-      console.log("is in sun part");
       letThereBeSun();
       $('body').addClass('sunny');
     } else {
