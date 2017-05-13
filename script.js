@@ -366,4 +366,4 @@ function flip() {
 
 // < < < TESTING > > >
 //displayWeather(day, sun, lightClouds, darkClouds, snow, dry)
-displayWeather(  0,   0,           0,          1,    1,   0);
+//displayWeather(  0,   0,           0,          1,    1,   0);
