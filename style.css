@@ -1,9 +1,13 @@
 body {
-  overflow: hidden;
+  overflow: hidden !important;
   background-color: rgb(100, 120, 200);
   image-rendering: auto;
 
 
+}
+
+img {
+  overflow: hidden !important;
 }
 
 .sunny {
